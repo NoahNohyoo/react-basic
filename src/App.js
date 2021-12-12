@@ -19,7 +19,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mode:'welcome',
+      mode:'read',
       subject: {title:'WEB', sub:'World wide Web!'},
       welcome:{title:'Welcome', desc:'Hello, React!!'},
       contents:[
@@ -43,7 +43,11 @@ class App extends Component {
       <div className="App">
         <Subject 
           title={this.state.subject.title} 
-          sub={this.state.subject.sub}>
+          sub={this.state.subject.sub}
+          onChangePage={function(){
+            this.setState({mode:'welcome'});
+          }.bind(this)}
+        >
         </Subject>
        <TOC data={this.state.contents}></TOC>
        <Content title={_title} desc={_desc}></Content>
@@ -51,7 +55,5 @@ class App extends Component {
     );
   }
 }
-
-
 
 export default App;
