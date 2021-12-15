@@ -52,8 +52,9 @@ class App extends Component {
       _article = <ReadContent title={_title} desc={_desc}></ReadContent>;
     
     } else if (this.state.mode === 'create') {
-      _title = this.state.mode;
-      _article = <CreateContent title={_title}></CreateContent>;
+      _article = <CreateContent title="Create" onSubmit={function(_title, _desc){
+        console.log(_title, _desc);
+      }.bind(this)}></CreateContent>;
     }
 
     return (
