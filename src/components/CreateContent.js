@@ -1,17 +1,19 @@
 import React, {Component } from 'react';
 
-class Content extends Component {
+class CreateContent extends Component {
     render() {
         return (
         <article>
             <h2>{this.props.title}</h2>
-            {this.props.desc}
+            <form>
+                <input type="text" />
+            </form>
         </article>
         );
     }
 }
 
-// function Content() {
+// function CreateContent() {
 //     return (
 //         <article>
 //             <h2>{this.props.title}</h2>
@@ -20,4 +22,4 @@ class Content extends Component {
 //     );
 // };
 
-  export default Content;
+  export default CreateContent;
