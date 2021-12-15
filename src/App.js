@@ -2,6 +2,7 @@ import React, {Component } from 'react';
 import Subject from './components/Subject';
 import TOC from './components/TOC';
 import Content from './components/Content';
+import Control from './components/Control';
 //  import logo from './logo.svg';
  import './App.css';
 
@@ -57,6 +58,11 @@ class App extends Component {
           }.bind(this)}
         >
         </Subject>
+        <Control onChangeMode={function(_mode) {
+          this.setState({
+            mode:_mode
+          })
+        }.bind(this)}></Control>
        <TOC 
         onChangePage={function(id) {
           this.setState({mode:'read',
@@ -64,7 +70,6 @@ class App extends Component {
         });
         }.bind(this)}
         data={this.state.contents}>
-
         </TOC>
        <Content title={_title} desc={_desc}></Content>
      </div>
